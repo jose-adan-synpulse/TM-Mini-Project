@@ -1,0 +1,224 @@
+{
+  "ad221059-919b-49c4-8a87-745117f545e7": {
+    "id": "ad221059-919b-49c4-8a87-745117f545e7",
+    "resources": [
+      {
+        "id": "35300_3Y7OVNXC5LWUJXGL9TXBOFZW208ER",
+        "account_resource": {
+          "id": "170d79dd-f267-4162-939a-579a507f4819",
+          "name": "",
+          "product_id": "",
+          "product_version_id": "77",
+          "permitted_denominations": [
+            "GBP"
+          ],
+          "status": "ACCOUNT_STATUS_OPEN",
+          "opening_timestamp": "2021-03-06T20:10:36.902239Z",
+          "closing_timestamp": null,
+          "stakeholder_ids": [
+            "60004000000115300"
+          ],
+          "instance_param_vals": {
+            "gross_interest_rate": "0.098",
+            "loan_amount": "3000",
+            "loan_term": "24",
+            "repayment_day": "6"
+          },
+          "derived_instance_param_vals": {},
+          "details": {},
+          "accounting": null
+        },
+        "dependencies": [],
+        "resource_batch_id": "ad221059-919b-49c4-8a87-745117f545e7",
+        "dependency_group_id": "60004000000115300",
+        "resource_status": "RESOURCE_STATUS_FAILED",
+        "metadata": {},
+        "tranche_id": ""
+      },
+      {
+        "id": "35301_3Y7OVNXC5LWUJXGL9TXBOFZW208ER",
+        "account_resource": {
+          "id": "32efc3ce-b0c5-4e0d-afee-c77d92f0c3e7",
+          "name": "",
+          "product_id": "",
+          "product_version_id": "77",
+          "permitted_denominations": [
+            "GBP"
+          ],
+          "status": "ACCOUNT_STATUS_OPEN",
+          "opening_timestamp": "2021-03-06T20:10:36.902338Z",
+          "closing_timestamp": null,
+          "stakeholder_ids": [
+            "60004000000115301"
+          ],
+          "instance_param_vals": {
+            "gross_interest_rate": "0.098",
+            "loan_amount": "3000",
+            "loan_term": "24",
+            "repayment_day": "6"
+          },
+          "derived_instance_param_vals": {},
+          "details": {},
+          "accounting": null
+        },
+        "dependencies": [],
+        "resource_batch_id": "ad221059-919b-49c4-8a87-745117f545e7",
+        "dependency_group_id": "60004000000115301",
+        "resource_status": "RESOURCE_STATUS_FAILED",
+        "metadata": {},
+        "tranche_id": ""
+      },
+      {
+        "id": "35302_3Y7OVNXC5LWUJXGL9TXBOFZW208ER",
+        "account_resource": {
+          "id": "e35f060f-65a9-45db-b347-682b98752c3a",
+          "name": "",
+          "product_id": "",
+          "product_version_id": "77",
+          "permitted_denominations": [
+            "GBP"
+          ],
+          "status": "ACCOUNT_STATUS_OPEN",
+          "opening_timestamp": "2021-03-06T20:10:36.902393Z",
+          "closing_timestamp": null,
+          "stakeholder_ids": [
+            "60004000000115302"
+          ],
+          "instance_param_vals": {
+            "gross_interest_rate": "0.098",
+            "loan_amount": "3000",
+            "loan_term": "24",
+            "repayment_day": "6"
+          },
+          "derived_instance_param_vals": {},
+          "details": {},
+          "accounting": null
+        },
+        "dependencies": [],
+        "resource_batch_id": "ad221059-919b-49c4-8a87-745117f545e7",
+        "dependency_group_id": "35302_3Y7OVNXC5LWUJXGL9TXBOFZW208ER",
+        "resource_status": "RESOURCE_STATUS_FAILED",
+        "metadata": {},
+        "tranche_id": ""
+      },
+      {
+        "id": "60004000000115300",
+        "customer_resource": {
+          "id": "",
+          "status": "CUSTOMER_STATUS_ACTIVE",
+          "identifiers": [
+            {
+              "identifier_type": "IDENTIFIER_TYPE_EMAIL",
+              "identifier": "26ab2909-e47c-4b6c-910c-0e548b426a62@thoughtmachine.net"
+            }
+          ],
+          "customer_details": {
+            "title": "CUSTOMER_TITLE_MR",
+            "first_name": "Perf",
+            "middle_name": "L",
+            "last_name": "Test",
+            "dob": "1985-03-25",
+            "gender": "CUSTOMER_GENDER_MALE",
+            "nationality": "GB",
+            "email_address": "mar@tm.net",
+            "mobile_phone_number": "677906636",
+            "home_phone_number": "677906636",
+            "business_phone_number": "677906636",
+            "contact_method": "CUSTOMER_CONTACT_METHOD_EMAIL",
+            "country_of_residence": "GB",
+            "country_of_taxation": "GB",
+            "accessibility": "CUSTOMER_ACCESSIBILITY_AUDIO",
+            "external_customer_id": ""
+          },
+          "additional_details": {}
+        },
+        "dependencies": [],
+        "resource_batch_id": "ad221059-919b-49c4-8a87-745117f545e7",
+        "dependency_group_id": "60004000000115300",
+        "resource_status": "RESOURCE_STATUS_LOADED",
+        "metadata": {},
+        "tranche_id": ""
+      },
+      {
+        "id": "60004000000115301",
+        "customer_resource": {
+          "id": "",
+          "status": "CUSTOMER_STATUS_ACTIVE",
+          "identifiers": [
+            {
+              "identifier_type": "IDENTIFIER_TYPE_EMAIL",
+              "identifier": "871c6e68-e88b-407c-bde7-eb25b5922801@thoughtmachine.net"
+            }
+          ],
+          "customer_details": {
+            "title": "CUSTOMER_TITLE_MR",
+            "first_name": "Perf",
+            "middle_name": "L",
+            "last_name": "Test",
+            "dob": "1985-03-25",
+            "gender": "CUSTOMER_GENDER_MALE",
+            "nationality": "GB",
+            "email_address": "mar@tm.net",
+            "mobile_phone_number": "677906636",
+            "home_phone_number": "677906636",
+            "business_phone_number": "677906636",
+            "contact_method": "CUSTOMER_CONTACT_METHOD_EMAIL",
+            "country_of_residence": "GB",
+            "country_of_taxation": "GB",
+            "accessibility": "CUSTOMER_ACCESSIBILITY_AUDIO",
+            "external_customer_id": ""
+          },
+          "additional_details": {}
+        },
+        "dependencies": [],
+        "resource_batch_id": "ad221059-919b-49c4-8a87-745117f545e7",
+        "dependency_group_id": "60004000000115301",
+        "resource_status": "RESOURCE_STATUS_LOADED",
+        "metadata": {},
+        "tranche_id": ""
+      },
+      {
+        "id": "60004000000115302",
+        "customer_resource": {
+          "id": "",
+          "status": "CUSTOMER_STATUS_ACTIVE",
+          "identifiers": [
+            {
+              "identifier_type": "IDENTIFIER_TYPE_EMAIL",
+              "identifier": "1a3c7e98-f1cc-4b6d-80f9-288fc986a85b@thoughtmachine.net"
+            }
+          ],
+          "customer_details": {
+            "title": "CUSTOMER_TITLE_MR",
+            "first_name": "Perf",
+            "middle_name": "L",
+            "last_name": "Test",
+            "dob": "1985-03-25",
+            "gender": "CUSTOMER_GENDER_MALE",
+            "nationality": "GB",
+            "email_address": "mar@tm.net",
+            "mobile_phone_number": "677906636",
+            "home_phone_number": "677906636",
+            "business_phone_number": "677906636",
+            "contact_method": "CUSTOMER_CONTACT_METHOD_EMAIL",
+            "country_of_residence": "GB",
+            "country_of_taxation": "GB",
+            "accessibility": "CUSTOMER_ACCESSIBILITY_AUDIO",
+            "external_customer_id": ""
+          },
+          "additional_details": {}
+        },
+        "dependencies": [],
+        "resource_batch_id": "ad221059-919b-49c4-8a87-745117f545e7",
+        "dependency_group_id": "35302_3Y7OVNXC5LWUJXGL9TXBOFZW208ER",
+        "resource_status": "RESOURCE_STATUS_LOADED",
+        "metadata": {},
+        "tranche_id": ""
+      }
+    ],
+    "status": "RESOURCE_BATCH_STATUS_FAILED",
+    "last_updated_timestamp": "2021-03-08T20:39:18.223442Z",
+    "validation_error": "",
+    "tranche_id": ""
+  }
+}

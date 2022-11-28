@@ -1,0 +1,21 @@
+{
+    "default_environment": "my_environment",
+    "environments" : {
+        "my_environment" : {
+            "basic_auth_username": "<REPLACE WITH BASIC AUTH USERNAME>",
+            "basic_auth_password": "<REPLACE WITH BASIC AUTH PASSWORD>",
+            "ops_dash_url": "https://ops-<REPLACE WITH ENVIRONMENT URL>",
+            "core_api_url": "https://core-api-<REPLACE WITH ENVIRONMENT URL>",
+            "data_loader_api_url": "https://data-loader-api-<REPLACE WITH ENVIRONMENT URL>",
+            "products_api_url": "https://products-api-<REPLACE WITH ENVIRONMENT URL>",
+            "workflow_api_url": "https://workflows-api-<REPLACE WITH ENVIRONMENT URL>",
+            "kafka": {
+                "broker_url": "<REPLACE WITH KAFKA BROKER URL>"
+            },
+            "service_account_name": "",
+            "service_account_id": "",
+            "access_token": "<REPLACE WITH SERVICE TOKEN>"
+
+        }
+    }
+}

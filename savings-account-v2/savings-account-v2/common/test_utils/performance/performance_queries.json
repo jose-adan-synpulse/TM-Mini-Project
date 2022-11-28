@@ -1,0 +1,73 @@
+{
+    "schedules": {
+        "Throughput": {
+            "query": "sum by (app) (rate(kafka_consumer_message_processing_time_count{\n  kubernetes_cluster=~\"$cluster\", \n  kubernetes_namespace=~\"$kubernetes_namespace\", \n  topic=\"vault.core.contracts.schedule_execution.requests\",\n  consumer_group=\"vault.kernel.contracts.account_schedule_processor\",\n  }[2m]\n))"
+        },
+        "EngineFetcher": {
+            "95th %ile": "histogram_quantile(0.95, sum(rate(contracts_engine_api_fetcher_operation_duration_bucket{app=\"contract-engine-account-scheduling\", operation=\"$fetcher\", kubernetes_cluster=\"$cluster\", kubernetes_namespace=\"$namespace\"}[$lookback_window])) by (le))",
+            "99th %ile": "histogram_quantile(0.99, sum(rate(contracts_engine_api_fetcher_operation_duration_bucket{app=\"contract-engine-account-scheduling\", operation=\"$fetcher\", kubernetes_cluster=\"$cluster\", kubernetes_namespace=\"$namespace\"}[$lookback_window])) by (le))",
+            "param_variable": "$fetcher",
+            "params": [
+                "BatchGetAccountLiveBalances",
+                "BatchGetContractModuleVersions",
+                "BatchGetFlagTimeseries",
+                "BatchGetGlobalParameters",
+                "BatchGetPlans",
+                "BatchGetSupervisorContractVersions",
+                "FetchActiveSmartContractModuleVersions",
+                "GetAccountsContractInstances",
+                "GetAllContractParameterTimeseries",
+                "GetContractTemplates",
+                "LastRunTimesBatch",
+                "ListAccountAssocsForPlans",
+                "ListBalanceRequirements",
+                "ListCalendarEvents",
+                "ListGlobalParameterValues",
+                "ListPlanAssocsForAccounts",
+                "ListPostingInstructionBatches",
+                "ListPostingInstructionBatchRequirements"
+            ]
+        },
+        "EngineExecutor": {
+            "95th %ile": "histogram_quantile(0.95, sum(rate(contracts_engine_api_executor_duration_bucket{app=\"contract-engine-account-scheduling\", dependency=\"$executor\", kubernetes_cluster=\"$cluster\", kubernetes_namespace=\"$namespace\"}[$lookback_window])) by (le))",
+            "99th %ile": "histogram_quantile(0.99, sum(rate(contracts_engine_api_executor_duration_bucket{app=\"contract-engine-account-scheduling\", dependency=\"$executor\", kubernetes_cluster=\"$cluster\", kubernetes_namespace=\"$namespace\"}[$lookback_window])) by (le))",
+            "param_variable": "$executor",
+            "params": [
+                "RunHookChunked",
+                "RunSupervisorHookChunked"
+            ]
+        },
+        "EngineCommitter": {
+            "95th %ile": "histogram_quantile(0.95, sum(rate(contracts_engine_api_committer_duration_bucket{app=\"contract-hook-directives-committer\", dependency=\"$committer\", kubernetes_cluster=\"$cluster\", kubernetes_namespace=\"$namespace\"}[$lookback_window])) by (le))",
+            "99th %ile": "histogram_quantile(0.99, sum(rate(contracts_engine_api_committer_duration_bucket{app=\"contract-hook-directives-committer\", dependency=\"$committer\", kubernetes_cluster=\"$cluster\", kubernetes_namespace=\"$namespace\"}[$lookback_window])) by (le))",
+            "param_variable": "$committer",
+            "params": [
+                "CommitAccountNotes",
+                "CommitAmendSchedules",
+                "CommitPostings",
+                "CommitRemoveSchedules",
+                "CommitUpdateAccountEventTypes",
+                "CommitUpdatePlanEventTypes",
+                "CommitWorkflows"
+            ]
+        }
+    },
+    "postings": {
+        "PrePostingProcessing": {
+            "95th %ile": "histogram_quantile(0.95, sum by (le) (rate(contracts_engine_api_hook_execution_duration_bucket{kubernetes_namespace=~\"$kubernetes_namespace\", kubernetes_cluster=\"$cluster\", app=\"$app\", hook=~\"BulkVerifyPostingInstructionBatch\", outcome=~\"$outcome\"}[2m])))",
+            "99th %ile": "histogram_quantile(0.99, sum by (le) (rate(contracts_engine_api_hook_execution_duration_bucket{kubernetes_namespace=~\"$kubernetes_namespace\", kubernetes_cluster=\"$cluster\", app=\"$app\", hook=~\"BulkVerifyPostingInstructionBatch\", outcome=~\"$outcome\"}[2m])))"
+        },
+        "PostPostingProcessing": {
+            "95th %ile": "histogram_quantile(0.95, sum by (le) (rate(contracts_engine_api_hook_execution_duration_bucket{kubernetes_namespace=~\"$kubernetes_namespace\", kubernetes_cluster=\"$cluster\", app=\"$app\", hook=~\"BulkProcessPostingInstructionBatch\", outcome=~\"$outcome\"}[2m])))",
+            "99th %ile": "histogram_quantile(0.99, sum by (le) (rate(contracts_engine_api_hook_execution_duration_bucket{kubernetes_namespace=~\"$kubernetes_namespace\", kubernetes_cluster=\"$cluster\", app=\"$app\", hook=~\"BulkProcessPostingInstructionBatch\", outcome=~\"$outcome\"}[2m])))"
+        },
+        "PostingsProcessorPipeline.RequestLatency": {
+            "95th %ile": "histogram_quantile(0.95, sum(rate(pipeline_request_latency_s_bucket{pipeline=\"PostingsProcessor\", app=~\"$app\", kubernetes_cluster=\"$cluster\", kubernetes_namespace=\"$namespace\"}[$lookback_window])) by (le))",
+            "99th %ile": "histogram_quantile(0.99, sum(rate(pipeline_request_latency_s_bucket{pipeline=\"PostingsProcessor\", app=~\"$app\", kubernetes_cluster=\"$cluster\", kubernetes_namespace=\"$namespace\"}[$lookback_window])) by (le))"
+        },
+        "PostingsProcessorPipeline.ResponseTime": {
+            "95th %ile": "histogram_quantile(0.95, sum(rate(pipeline_request_response_time_s_bucket{pipeline=\"PostingsProcessor\", app=~\"$app\", kubernetes_cluster=\"$cluster\", kubernetes_namespace=\"$namespace\"}[$lookback_window])) by (le))",
+            "99th %ile": "histogram_quantile(0.99, sum(rate(pipeline_request_response_time_s_bucket{pipeline=\"PostingsProcessor\", app=~\"$app\", kubernetes_cluster=\"$cluster\", kubernetes_namespace=\"$namespace\"}[$lookback_window])) by (le))"
+        }
+    }
+}

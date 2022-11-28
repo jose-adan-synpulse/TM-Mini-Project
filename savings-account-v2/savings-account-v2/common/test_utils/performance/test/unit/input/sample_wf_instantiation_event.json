@@ -1,0 +1,9 @@
+{
+  "request_id":"123test123",
+  "workflow_instance":{
+    "workflow_definition_id":"CURRENT_ACCOUNT_TEST_WF"
+  },
+  "instantiation_context":{
+    "account_id":"1"
+  }
+}

@@ -1,0 +1,11 @@
+This file aims at providing autocompletion in smart contract development.
+
+To use, add these two lines to the top of your contract
+
+```
+from common.test_utils.contracts_sdk.types import vault
+
+vault = vault()
+```
+
+Then remove before commiting

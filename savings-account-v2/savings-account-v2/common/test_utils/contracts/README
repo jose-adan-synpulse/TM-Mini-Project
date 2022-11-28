@@ -1,0 +1,9 @@
+To run all tests, run `plz test`.
+
+To run a specific test, run `plz test //path/to/build/file:test_name`
+
+Eg `plz test //library/current_account/smart_contracts/tests/simulation:current_account_test`
+
+To run all tests in a folder, you can use `plz test //path/to/folder/...`
+
+To view coverage metrics for unit tests, after running plz test, view /tmp/contract_name_coverage_reports/
