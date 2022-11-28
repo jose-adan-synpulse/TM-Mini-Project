@@ -84,10 +84,10 @@ class Client:
         self._set_session_headers()
 
     @_auth_required
-    def _api_post(self, url, payload, timeout, debug=False):
+    def _api_post(self, url, payload, timeout, debug=True):
         #Uncomment for POSTMAN Body Payload
-        # with open("payload.json", "w") as f:
-        #     f.write(json.dumps(payload))
+        with open("payload.json", "w") as f:
+            f.write(json.dumps(payload))
         response = self._session.post(
             self._core_api_url + url,
             headers={"grpc-timeout": timeout},
@@ -157,9 +157,10 @@ class Client:
             "instructions": instructions,
             }
         #Uncomment for POSTMAN Body Payload
-        # with open("payload.json", "w") as f:
-        #     f.write(json.dumps(vardata))
-        # print(vardata)
+        with open("payload.json", "w") as f:
+            f.write(json.dumps(vardata))
+        print(vardata)
+
         payload = self._api_post(
             "/v1/contracts:simulate",
             {
@@ -193,9 +194,8 @@ class Client:
         flag_definition_ids: List[str] = None,
         output_account_ids: List[str] = None,
         output_timestamps: List[datetime] = None,
-        debug: bool = False,
+        debug: bool = True,
     ):
-
         internal_account_creation_events = []
         account_creation_events = account_creation_events or []
         default_events = []
@@ -289,6 +289,7 @@ class Client:
             timeout=timeout,
             debug=debug,
         )
+
         return payload
 
 

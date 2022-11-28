@@ -1,7 +1,7 @@
 # Copyright @ 2020 Thought Machine Group Limited. All rights reserved.
 """
 To be called by simulation tests
-Simualtes an instance of a bank's internal accounet with tside=ASSET
+Simulates an instance of a bank's internal account with tside=ASSET
 """
 
 display_name = "Testing Internal Asset Account"

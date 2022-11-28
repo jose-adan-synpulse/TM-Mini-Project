@@ -6,7 +6,7 @@ from typing import Dict, DefaultDict, List, Tuple
 
 DEFAULT_ADDRESS = "DEFAULT"
 DEFAULT_ASSET = "COMMERCIAL_BANK_MONEY"
-DEFAULT_DENOM = "GBP"
+DEFAULT_DENOM = "PHP" #"GBP"
 
 BalanceDimensions = namedtuple(
     "BalanceDimensions",

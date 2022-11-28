@@ -1,0 +1,19 @@
+SIMULATION TEST CASES:
+
+   DONE - Test base interest accrual/application
+   DONE - Test base interest accrual/application until it hits bonus interest for a month
+
+   DONE - Test flat maintenance fee
+        * 1st month (fee apply)
+        * 2nd month (fee waived)
+
+    - Test tiered maintenance fee (depend on ranges)
+        * 1st month (tier 1 fee) 
+        * 2nd month (tier 2 fee)
+        * 3rd month (tier 3 fee)
+        * so on and so forth
+
+    - Test withdrawal able to withdraw amount
+        * not able to withdraw amount larger than the balance
+        * not able to withdraw other denominations
+        * 

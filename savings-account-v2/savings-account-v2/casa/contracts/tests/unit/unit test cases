@@ -1,0 +1,9 @@
+Test cases for CASA variation 1:
+    - Test daily Base Interest accrual
+    - Test daily Base Interest accrual and application
+    - Test monthly maintenance flat fee application
+    - Test tiered monthly maintenance fee application
+    - Test bonus interest accrual 
+    - Test daily bonus Interest accrual and application
+    - Test minimum amount for bonus interest 
+    - Test maintenance fee waived
