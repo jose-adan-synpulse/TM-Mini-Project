@@ -154,7 +154,7 @@ def scheduled_code(event_type, effective_date):
             vault, denomination, internal_account, effective_date, balances
         )
 
-@requires(parameters=True, balances='latest', postings='1 month',)
+@requires(parameters=True, balances='latest', postings='1 day',)
 def pre_posting_code(postings, effective_date):
     denomination = vault.get_parameter_timeseries(name='denomination').latest()
 
@@ -187,30 +187,6 @@ def pre_posting_code(postings, effective_date):
                     )
             else:
                 None
-        
-
-@requires(
-    parameters=True,
-    flags=True,
-    balances="latest live",
-    postings="1 month",
-)
-def post_posting_code(postings, effective_date):
-    balances = vault.get_balance_timeseries().latest()
-    denomination = vault.get_parameter_timeseries(name='denomination').latest()
-
-@requires(flags=True, parameters=True)
-def pre_parameter_change_code(parameters, effective_date):
-    if "bonus_interest_rate" in parameters:
-        None
-
-@requires(parameters=True)
-def post_parameter_change_code(old_parameters, new_parameters, effective_date):
-    None
-
-@requires(parameters=True, balances="latest")
-def close_code(effective_date):
-    None 
 
 def _accrue_interest(vault, denomination, internal_account, effective_date, balances):
     hook_execution_id = vault.get_hook_execution_id()
@@ -306,8 +282,6 @@ def _apply_maintenance_fee(vault, denomination, internal_account, effective_date
         (DEFAULT_ADDRESS, DEFAULT_ASSET, denomination, Phase.COMMITTED)
     ].net
     minimum_balance_maintenance_fee_waive = vault.get_parameter_timeseries(name="minimum_balance_maintenance_fee_waive").latest()
-    
-    # raise InvalidContractParameter("monthly mean balance: %s" % _monthly_mean_balance(vault, denomination, effective_date))
 
     if _monthly_mean_balance(vault, denomination, effective_date) < minimum_balance_maintenance_fee_waive: 
         flat_fee = vault.get_parameter_timeseries(name="flat_fee").latest()
@@ -402,7 +376,6 @@ def _apply_maintenance_fee(vault, denomination, internal_account, effective_date
 
 def _get_tiered_monthly_fee(effective_balance, fee_tiers, fee_tier_ranges):
     tier = None
-    # raise InvalidContractParameter(f'printing: {effective_balance}')
     for fee_tier in fee_tier_ranges: 
         bounds = fee_tier_ranges[fee_tier]
         if bounds['min'] <= effective_balance <= bounds['max']:

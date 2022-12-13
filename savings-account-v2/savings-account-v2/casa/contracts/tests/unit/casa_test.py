@@ -160,13 +160,13 @@ class TutorialTest(unittest.TestCase):
             instructions,
         )
 
-        # final_balances = product_test_utils.get_final_balances(res[5]["result"]["balances"]["main_account"]["balances"])
-        # final_balances_2 = product_test_utils.get_final_balances(res[9]["result"]["balances"]["main_account"]["balances"])
-        # final_balances_3 = product_test_utils.get_final_balances(res[13]["result"]["balances"]["main_account"]["balances"])
+        final_balances = product_test_utils.get_final_balances(res[5]["result"]["balances"]["main_account"]["balances"])
+        final_balances_2 = product_test_utils.get_final_balances(res[9]["result"]["balances"]["main_account"]["balances"])
+        final_balances_3 = product_test_utils.get_final_balances(res[13]["result"]["balances"]["main_account"]["balances"])
         
-        # self.assertEqual("7", final_balances["ACCRUED_INCOMING_INTEREST"])
-        # self.assertEqual("7.014", final_balances_2["ACCRUED_INCOMING_INTEREST"])
-        # self.assertEqual("7.028", final_balances_3["ACCRUED_INCOMING_INTEREST"])
+        self.assertEqual("7", final_balances["ACCRUED_INCOMING_INTEREST"])
+        self.assertEqual("7.014", final_balances_2["ACCRUED_INCOMING_INTEREST"])
+        self.assertEqual("7.028", final_balances_3["ACCRUED_INCOMING_INTEREST"])
 
     def test_daily_accrue_base_interest_apply_interest(self):
         start = datetime(year=2019, month=1, day=1, hour=9, tzinfo=timezone.utc)
