@@ -387,7 +387,7 @@ class SimulationTestCase(TestCase):
         events, derived_param_outputs = compile_chrono_events(
             test_scenario, setup_events
         )
-
+        
         res = self.client.simulate_smart_contract(
             start_timestamp=test_scenario.start,
             end_timestamp=test_scenario.end,
@@ -412,7 +412,7 @@ class SimulationTestCase(TestCase):
             output_timestamps=[output[1] for output in derived_param_outputs],
             debug=test_scenario.debug,
         )
-
+        
         actual_balances = get_balances(res)
         logs_with_timestamp = get_logs_with_timestamp(res)
         derived_parameters = get_derived_parameters(res)
