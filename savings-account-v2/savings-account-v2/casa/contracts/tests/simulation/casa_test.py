@@ -74,15 +74,15 @@ default_template_params = {
                         '"tier3": {"min": 5000, "max": 7499},'
                         '"tier4": {"min": 7500, "max": 14999},'
                         '"tier5": {"min": 15000, "max": 20000}}',
-    'internal_account': 'Internal account'
+    'internal_account': 'Internal account',
+    'base_interest_rate': '.002', 
+    'bonus_interest_rate': '.005', 
+    'flat_fee': '50'
 }
 
 default_instance_params = {
-    'base_interest_rate': '.002',
-    'bonus_interest_rate': '.005',
     'bonus_interest_amount_threshold': '5000',
     'minimum_balance_maintenance_fee_waive': '150',
-    'flat_fee': '50',
 }
 
 
@@ -308,12 +308,22 @@ class CASATest(SimulationTestCase):
         self.run_test_scenario(test_scenario)
 
     def test_tier_maintenance_fee(self):
-        test_instance_params = {
-            'base_interest_rate': '.002',
-            'bonus_interest_rate': '.005',
-            'bonus_interest_amount_threshold': '5000',
-            'minimum_balance_maintenance_fee_waive': '900',
-            'flat_fee': '0',
+        test_template_params = {
+            'denomination': 'PHP',
+            'fee_tiers': '{ "tier1": "0.135", '
+                            '"tier2": "0.098", '
+                            '"tier3": "0.045", '
+                            '"tier4": "0.035", '
+                            '"tier5": "0.03"}',
+            'fee_tier_ranges': '{ "tier1": {"min": 1000, "max": 2999},'
+                                '"tier2": {"min": 3000, "max": 4999},'
+                                '"tier3": {"min": 5000, "max": 7499},'
+                                '"tier4": {"min": 7500, "max": 14999},'
+                                '"tier5": {"min": 15000, "max": 20000}}',
+            'internal_account': 'Internal account',
+            'base_interest_rate': '.002', 
+            'bonus_interest_rate': '.005', 
+            'flat_fee': '50'
         }
 
         start = default_simulation_start_date
@@ -411,7 +421,8 @@ class CASATest(SimulationTestCase):
                 start=start,
                 end=end,
                 sub_tests=[sub_test],
-                instance_params=test_instance_params
+                instance_params=test_template_params,
+                template_params=test_default_
             )
             self.run_test_scenario(test_scenario)
 

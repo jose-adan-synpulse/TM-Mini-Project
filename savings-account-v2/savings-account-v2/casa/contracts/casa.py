@@ -39,7 +39,6 @@ parameters = [
         description='Internal account ID.',
         display_name='Internal account ID',
     ),
-    #Instance Params
     Parameter(
         name="base_interest_rate",
         shape=NumberShape(
@@ -63,6 +62,18 @@ parameters = [
         default_value=Decimal(2)
     ),
     Parameter(
+        name="flat_fee",
+        level=Level.INSTANCE,
+        description="Flat fee to be applied.",
+        display_name="Flat Fee to be applied",
+        update_permission=UpdatePermission.USER_EDITABLE,
+        shape=NumberShape(
+            kind=NumberKind.MONEY
+        ),
+        default_value="0"
+    ),
+    #Instance Params
+    Parameter(
         name="bonus_interest_amount_threshold",
         level=Level.INSTANCE,
         description="Amount threshold for the Bonus Interest to be applied.",
@@ -83,17 +94,6 @@ parameters = [
             kind=NumberKind.MONEY
         ),
         default_value=Decimal(1000)
-    ),
-    Parameter(
-        name="flat_fee",
-        level=Level.INSTANCE,
-        description="Flat fee to be applied.",
-        display_name="Flat Fee to be applied",
-        update_permission=UpdatePermission.USER_EDITABLE,
-        shape=NumberShape(
-            kind=NumberKind.MONEY
-        ),
-        default_value="0"
     )
 ]
 
