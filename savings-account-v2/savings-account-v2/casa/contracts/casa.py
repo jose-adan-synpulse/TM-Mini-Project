@@ -44,7 +44,7 @@ parameters = [
         shape=NumberShape(
             kind=NumberKind.PERCENTAGE
         ),
-        level=Level.INSTANCE,
+        level=Level.TEMPLATE,
         description="Base interest rate given by the bank to the account holder.",
         display_name="Base Interest Rate",
         update_permission=UpdatePermission.OPS_EDITABLE,
@@ -55,7 +55,7 @@ parameters = [
         shape=NumberShape(
             kind=NumberKind.PERCENTAGE
         ),
-        level=Level.INSTANCE,
+        level=Level.TEMPLATE,
         description="Bonus interest rate given by the bank to the account holder.",
         display_name="Bonus Interest Rate",
         update_permission=UpdatePermission.OPS_EDITABLE,
@@ -63,7 +63,7 @@ parameters = [
     ),
     Parameter(
         name="flat_fee",
-        level=Level.INSTANCE,
+        level=Level.TEMPLATE,
         description="Flat fee to be applied.",
         display_name="Flat Fee to be applied",
         update_permission=UpdatePermission.USER_EDITABLE,
@@ -72,10 +72,9 @@ parameters = [
         ),
         default_value="0"
     ),
-    #Instance Params
     Parameter(
         name="bonus_interest_amount_threshold",
-        level=Level.INSTANCE,
+        level=Level.TEMPLATE,
         description="Amount threshold for the Bonus Interest to be applied.",
         display_name="Amount Treshold for Bonus Interest",
         update_permission=UpdatePermission.OPS_EDITABLE,
@@ -86,7 +85,7 @@ parameters = [
     ),
     Parameter(
         name="minimum_balance_maintenance_fee_waive",
-        level=Level.INSTANCE,
+        level=Level.TEMPLATE,
         description="Minimum balance for the monthly maintenance fee to be waived.",
         display_name="Minimum balance for the monthly maintenance fee to be waived",
         update_permission=UpdatePermission.OPS_EDITABLE,

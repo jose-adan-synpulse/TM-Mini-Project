@@ -77,12 +77,13 @@ default_template_params = {
     'internal_account': 'Internal account',
     'base_interest_rate': '.002', 
     'bonus_interest_rate': '.005', 
-    'flat_fee': '50'
+    'flat_fee': '50',
+    'bonus_interest_amount_threshold': '5000',
+    'minimum_balance_maintenance_fee_waive': '150'
 }
 
 default_instance_params = {
-    'bonus_interest_amount_threshold': '5000',
-    'minimum_balance_maintenance_fee_waive': '150',
+    
 }
 
 
@@ -323,7 +324,9 @@ class CASATest(SimulationTestCase):
             'internal_account': 'Internal account',
             'base_interest_rate': '.002', 
             'bonus_interest_rate': '.005', 
-            'flat_fee': '50'
+            'flat_fee': '0',
+            'bonus_interest_amount_threshold': '5000',
+            'minimum_balance_maintenance_fee_waive': '150'
         }
 
         start = default_simulation_start_date
